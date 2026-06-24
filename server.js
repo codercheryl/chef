@@ -123,7 +123,7 @@ app.post('/api/candidate', async (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Fallback: serve index.html for any non-API route (SPA support)
-app.get('*', (req, res) => {
+app.get(/.*/, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
